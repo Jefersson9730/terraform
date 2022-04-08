@@ -7,14 +7,6 @@ pipeline {
 
     stages {
 
-        stage('validar') {
-            steps {
-                dir("terraform-test"){
-                sh 'terraform validate'
-                }
-            }
-        }
-
         stage('iniciliazr') {
             steps {
                 dir("terraform-test"){
