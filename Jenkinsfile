@@ -9,23 +9,23 @@ pipeline {
 
         stage('validar') {
             steps {
-                echo 'terraform validate'
+                sh 'terraform validate'
             }
         }
 
         stage('iniciliazr') {
             steps {
-                echo 'terraform init'
+                sh 'terraform init'
             }
         }
         stage('lanzar') {
             steps {
-                echo 'terraform apply -auto-approve'
+                sh 'terraform apply -auto-approve'
             }
         }
         stage('output') {
             steps {
-                echo 'terraform output'
+                sh 'terraform output'
             }
         }
     }
