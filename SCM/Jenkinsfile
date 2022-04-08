@@ -6,11 +6,18 @@ pipeline {
     }	
 
     stages {
-
-        stage('iniciliazr') {
+        stage('inicilizar') {
             steps {
                 dir("terraform-test"){
                 sh 'terraform init'
+                }
+            }
+        }
+
+        stage('validar') {
+            steps {
+                dir("terraform-test"){
+                sh 'terraform validate'
                 }
             }
         }
